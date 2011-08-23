@@ -17,22 +17,34 @@ public class Vector2D {
 		return y;
 	}
 
-	public void subtract(Vector2D v) {
+	public Vector2D subtract(Vector2D v) {
 		this.x = x - v.x;
 		this.y = y - v.y;
+		return this;
 	}
 
-	public void add(Vector2D v) {
+	public Vector2D add(Vector2D v) {
 		this.x = x + v.x;
 		this.y = y + v.y;
+		return this;
 	}
 
-	public void scale(double factor) {
+	public Vector2D scale(double factor) {
 		x = x * factor;
 		y = y * factor;
+		return this;
 	}
 
 	public double getMagnitude() {
 		return Math.sqrt(x * x + y * y);
+	}
+	
+	public Vector2D copy(){
+		return new Vector2D(x, y);
+	}
+	
+	@Override
+	public String toString() {
+		return x + "/" + y;
 	}
 }
